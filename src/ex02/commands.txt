@@ -1,0 +1,34 @@
+teste // truncate -s 1 test0 && chmod 751 test0
+
+sol //
+
+1. Criar as pastas e arquivos com os tamanhos exatos
+
+mkdir test0
+python3 -c "print('A' * 4, end='')" > test1
+mkdir test2
+node -e 'require("fs").writeFileSync("test3", "A")'
+truncate -s 2 test4
+ln test3 test5
+
+
+2. Aplicar as permissões octais calculadas para cada um
+
+chmod 715 test0
+chmod 714 test1
+chmod 504 test2
+chmod 404 test3
+chmod 641 test4
+chmod 404 test5
+
+ln -s test0 test6
+
+
+# 3. Ajustar as datas e horários exatos (Formato: MMDDhhmmCCYY)
+touch -h -t 060120472026 test0
+touch -h -t 060121462026 test1
+touch -h -t 060122452026 test2
+touch -h -t 060123442026 test3
+touch -h -t 060123432026 test4
+touch -h -t 060123442026 test5
+touch -h -t 060122202626 test6

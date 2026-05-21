@@ -1,0 +1,3 @@
+kinit
+klist > ex03/klist.txt
+cat ex03/klist.txt

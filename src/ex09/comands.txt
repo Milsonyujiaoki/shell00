@@ -1,0 +1,8 @@
+A Estrutura de uma Linha MágicaCada linha de teste num arquivo mágico é dividida estritamente em 4 colunas básicas (separadas por espaços ou tabulações):Offset (Onde procurar): O número do byte exato onde a leitura começa.Type (O que procurar): O tipo de dado que está lá (ex: string, leshort, lelong, byte).Value (O valor esperado): O texto ou número que valida o teste.Message (O que exibir): O texto que será impresso no terminal se o teste passar.
+
+echo "42  string  42  42 file" > ft_magic
+
+printf '%42s42' "" > teste_valido.txt
+printf '42%42s' "" > teste_invalido.txt
+
+file -m ft_magic teste_valido.txt teste_invalido.txt
